@@ -21,4 +21,4 @@ Weitere Clients könnten nun auch hinzugefügt werden --> Schritt 2
 
 Funktioniert noch nicht:
 - Client disconnecten
-- Dass der Name vom jeweiligen Client im Output Feld st/erscheint
+- Dass der Name vom jeweiligen Client im Output Feld steht/erscheint
