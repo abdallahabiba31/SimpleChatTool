@@ -5,7 +5,7 @@ Das Projekt wird durch die Datei "App.java" gestartet.
 
 Ablauf:
 1. Server starten:
-- Port angeben 
+- Port angeben (nach belieben)
 - "Start Server" klicken
 
 2. Client verbinden/hinzufügen:
