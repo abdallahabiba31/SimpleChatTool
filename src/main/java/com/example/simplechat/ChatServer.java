@@ -42,7 +42,7 @@ public class ChatServer implements Runnable {
       }
     }
   
-    ChatClient setText;
+    public ChatClient setText;
     public ChatClient rueckgabeUser() {
       // Iterator wird angefordert
       Iterator it = users.iterator();
