@@ -11,8 +11,9 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class ControlsUtil {
 
-  public static void appendToMessageArea(String message, TextArea area) {
+  public static void appendToMessageArea(String name, String message, TextArea area) {
     Platform.runLater(() -> {
+      area.appendText(name + ": ");
       area.appendText(message + "\n");
     });
   }

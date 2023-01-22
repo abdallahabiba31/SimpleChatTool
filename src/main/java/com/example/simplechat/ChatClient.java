@@ -51,13 +51,13 @@ public class ChatClient implements Runnable {
   public void run() {
     try {
       this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-      ControlsUtil.appendToMessageArea("[Client - "+userName+" ] Connected to the chat server", output);
+      ControlsUtil.appendToMessageArea(userName," Connected to the chat server", output);
       this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
       while (!socket.isClosed()) {
         while (bufferedReader.ready()) {
           var input = bufferedReader.readLine();
           ControlsUtil.writeMessageToSocket(input,bufferedWriter);
-          ControlsUtil.appendToMessageArea("\n" + input, output);
+          ControlsUtil.appendToMessageArea(userName, "\n" + input, output);
         }
       }
     } catch (IOException e) {
