@@ -76,11 +76,11 @@ public class ChatController {
   }
   @FXML
   public void onDisconnectClick() {
-    //
-    //ich weiß nicht, wie ich beim userThread erstmal einen Socket angebe
-    //daher habe ich daweil port drinnen stehen
-    //UserThread user = new UserThread(port, server);
-    //server.removeUser(name, user);
+    
+    server.getUsers().remove(client);
+
+    var ka = server.getUsers().toString();
+    ControlsUtil.appendToMessageArea(ka, " : hat sich disconnected", output);
 
   }
 }
