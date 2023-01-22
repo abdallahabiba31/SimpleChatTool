@@ -41,7 +41,23 @@ public class ChatServer implements Runnable {
         ControlsUtil.writeMessageToSocket(message,client.getBufferedWriter());
       }
     }
+  
+    ChatClient setText;
+    public ChatClient rueckgabeUser() {
+      // Iterator wird angefordert
+      Iterator it = users.iterator();
+      // HashSet wird mit dem Iterator durchlaufen
+      while (it.hasNext()) {
+        // Next gibt das aktuelle HashSet-Objekt zurück
+        // und geht zum nächsten über
+        setText = (ChatClient) it.next();
 
+        // Ausgabe des jeweiligen HashSet-Elementes
+        System.out.println(setText);
+        return setText;
+      }
+      return setText;
+    }
   @SneakyThrows
   @Override
   public void run() {
@@ -54,6 +70,7 @@ public class ChatServer implements Runnable {
       Thread newThread = new Thread(lastClient);
       newThread.start();
       ControlsUtil.appendToMessageArea("[Server]", " new client connection recieved and client started",output);
+      rueckgabeUser();
     }
   }
 }
