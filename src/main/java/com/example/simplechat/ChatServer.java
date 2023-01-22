@@ -67,6 +67,7 @@ public class ChatServer implements Runnable {
     while (true) {
       var clientSocket = serverSocket.accept();
       lastClient = new ChatClient(clientSocket,output,userField.getText());
+      users.add(lastClient);
       Thread newThread = new Thread(lastClient);
       newThread.start();
       ControlsUtil.appendToMessageArea("[Server]", " new client connection recieved and client started",output);
