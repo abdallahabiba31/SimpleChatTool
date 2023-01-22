@@ -16,7 +16,7 @@
       </MenuBar>
    </top>
    <center>
-      <TextArea fx:id="output" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" wrapText="true"/>
+      <TextArea fx:id="output" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" wrapText="true" editable="false"/>
    </center>
    <bottom>
       <GridPane prefHeight="123.0" prefWidth="600.0" BorderPane.alignment="CENTER">
