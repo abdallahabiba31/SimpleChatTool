@@ -23,6 +23,7 @@ public class ChatController {
   private BorderPane mainPanel;
   @FXML
   private TextField username;
+  private String clientName;
 
   private ChatServer server;
   private ChatClient client;
@@ -31,7 +32,7 @@ public class ChatController {
   protected void onSendButtonClick() {
     var userInput = input.getText();
     input.clear();
-    ControlsUtil.appendToMessageArea(userInput, output);
+    ControlsUtil.appendToMessageArea(clientName, userInput, output);
     if (client != null) {
       ControlsUtil.writeMessageToSocket(userInput, client.getBufferedWriter());
     }
@@ -67,6 +68,7 @@ public class ChatController {
         client = server.getLastClient();
       }
     }
+    clientName=name;
 
   }
   private void initConnection(String host,int port) throws IOException {

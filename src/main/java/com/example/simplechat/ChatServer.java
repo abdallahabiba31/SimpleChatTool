@@ -53,7 +53,7 @@ public class ChatServer implements Runnable {
       lastClient = new ChatClient(clientSocket,output,userField.getText());
       Thread newThread = new Thread(lastClient);
       newThread.start();
-      ControlsUtil.appendToMessageArea("[Server] new client connection recieved and client started",output);
+      ControlsUtil.appendToMessageArea("[Server]", " new client connection recieved and client started",output);
     }
   }
 }
