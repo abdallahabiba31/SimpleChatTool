@@ -16,7 +16,10 @@ import lombok.SneakyThrows;
 
 @Getter
 @Setter
+//implementieren von Runnable heisst, dass das Objekt über ein eigenen Thread ausgeführt wird
 public class ChatServer implements Runnable {
+  
+  //für den Server instanzieren wir ein neues ServerObjekt über die portnummer (SeverSocket, bidirektional)
   private int port;
   private Set<ChatClient> users = new HashSet<>();
   private static ServerSocket serverSocket;
@@ -24,6 +27,7 @@ public class ChatServer implements Runnable {
   private TextField userField;
   private ChatClient lastClient;
 
+   
   public ChatServer(int port, TextArea output,TextField userField) {
     this.output = output;
     this.port = port;
