@@ -12,15 +12,23 @@ Das Projekt wird durch die Datei "App.java" gestartet.
 Ablauf:
 1. Server starten:
 - Port angeben (nach belieben)
-- "Start Server" klicken
+- Button "Start Server" klicken
+Somit wird ein Server erzeugt, der auf diesen Port läuft und auf Client-Verbidnugen wartet/hört, um sie schlussendlich zu akzeptieren.
 
 2. Client verbinden/hinzufügen:
-- Port, Host und usernamen angeben. (Port: vom gestarteten Server, Host: localhost, Username: nach belieben)
-- Client verbinden --> "Connect" klicken
+- Port, Host und usernamen angeben. (Port: vom gestarteten Server bzw. vom Server mit dem man sich verbinden möchte (muss aber gestartet worden sein), Host: localhost, Username: nach belieben)
+- Um den Client letzendlich zu verbinden muss auf den Button "Connect" gedrückt werden
 
 3. Chatten:
 - Text im Feld "Text" einfügen 
-- "Send" klicken
+- Button "Send" klicken
+Der eingegeben Text erscheint dann mit dem Namen des Users im Ausgabefenster.
+
+4. Client disconnecten
+- Port vom Client angeben (localhost)
+- Username vom Client angeben
+- Button "disconnect" auswählen 
+
 
 Weitere Clients könnten nun auch hinzugefügt werden --> Schritt 2
 
