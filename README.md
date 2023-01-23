@@ -13,6 +13,7 @@ Ablauf:
 1. Server starten:
 - Port angeben (nach belieben)
 - Button "Start Server" klicken
+
 Somit wird ein Server erzeugt, der auf diesen Port läuft und auf Client-Verbidnugen wartet/hört, um sie schlussendlich zu akzeptieren.
 
 2. Client verbinden/hinzufügen:
