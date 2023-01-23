@@ -1,6 +1,12 @@
 # SimpleChatTool
 Projekt
 
+Eine kleine Einführung in unser SimpleChatTool-Projekt:
+Wir sind das P-Team und haben das Projekt SimpleChatTool programmiert. 
+In diesem Projekt geht es darum, dass ein Server erzeugt bzw. gestartet wird, womit sich mehrere Clients verbinden und somit auch chatten können.
+
+
+
 Das Projekt wird durch die Datei "App.java" gestartet.
 
 Ablauf:
@@ -19,6 +25,8 @@ Ablauf:
 Weitere Clients könnten nun auch hinzugefügt werden --> Schritt 2
 
 
-Funktioniert noch nicht:
-- Client disconnecten
-- Dass der Name vom jeweiligen Client im Output Feld steht/erscheint
+Leider haben wir die Funktionalität des Programmes nicht perfekt hingekriegt und haben einige bugs im Code. 
+Beispielsweise, ist es uns nicht gelungen mehrere Fenster zum chatten zu erzeugen. 
+
+
+
