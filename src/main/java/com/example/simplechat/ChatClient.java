@@ -24,15 +24,19 @@ public class ChatClient implements Runnable {
   private BufferedWriter bufferedWriter;
   private Socket socket;
 
+  //Kunstruktor zum erstellen eines ChatClients
   public ChatClient(Socket socket, TextArea output, String userName) {
     this.socket = socket;
     this.userName = userName;
     this.port = socket.getLocalPort();
     this.output = output;
   }
-
+  //Aufgabe der Methode: alle drei übergebenen Objekte zu schließen
   public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
     try {
+     //überprüft, ob jeder der übergebenen Parameter nicht null ist, 
+     //bevor dessen close()-Methode aufgerufen wird
+     //so wird sichergestellt, dass nur gültige Objekte geschlossen werden
       if (bufferedReader != null) {
         bufferedReader.close();
       }
@@ -47,15 +51,25 @@ public class ChatClient implements Runnable {
     }
   }
 
+  
+  
   @Override
   public void run() {
     try {
+      //neuer BufferedWriter erstellt, der mit dem OutputStream des übergebenen Sockets verbunden ist
       this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+      //Methode namens "appendToMessageArea" aufgerufen, die  Nachricht an  Textfeld mit dem Namen "output" sendet
+      //um anzuzeigen, das Benutzer erfolgreich mit Server verbunden ist
       ControlsUtil.appendToMessageArea(userName," Connected to the chat server", output);
+      //neuer BufferedReader erstellt, der mit  InputStream des Sockets verbunden ist
       this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+      //while-Schleife, die so lange läuft, wie der Socket nicht geschlossen ist
       while (!socket.isClosed()) {
+        //Innerhalb  Schleife wird überprüft, ob  BufferedReader bereit ist, Daten zu lesen
         while (bufferedReader.ready()) {
+          //nächste Zeile aus dem Eingabestream wird gelesen 
           var input = bufferedReader.readLine();
+          //Eingabstream an Methode namens "writeMessageToSocket" und "appendToMessageArea" übergeben
           ControlsUtil.writeMessageToSocket(input,bufferedWriter);
           ControlsUtil.appendToMessageArea(userName, "\n" + input, output);
         }
