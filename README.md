@@ -1,7 +1,6 @@
 # SimpleChatTool
-Projekt
  
-Eine kleine Einführung in unser SimpleChatTool-Projekt:
+#1 Eine kleine Einführung in unser SimpleChatTool-Projekt:
 Wir sind das P-Team und haben das Projekt SimpleChatTool programmiert. 
 In diesem Projekt geht es darum, dass ein Server erzeugt bzw. gestartet wird, womit sich mehrere Clients verbinden und somit auch chatten können.
 
