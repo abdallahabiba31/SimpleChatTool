@@ -43,6 +43,8 @@ public class ChatServer implements Runnable {
       }
     }
   
+   //Methode erzeugt, um zu schauen, welcher Client sich gerade verbunden hat bzw. sich 
+   //in der Liste befindet (wieder nur für uns)
     public ChatClient setText;
     public ChatClient rueckgabeUser() {
       // Iterator wird angefordert
@@ -59,19 +61,29 @@ public class ChatServer implements Runnable {
       }
       return setText;
     }
+  
+  //@SneakyThrows Annotation wird verwendet, um eine mögliche Exception auszulösen
   @SneakyThrows
   @Override
   public void run() {
     Platform.runLater(() -> {
+      //Nachricht an textfeld gesendet, um anzuzeigen, dass Server bestimmten Port lauscht
       output.appendText("\"Chat Server is listening on port: " + port + "\n");
     });
+    //endlos Schleife 
     while (true) {
+      //Server wartet auf neue Verbindung vom Client
       var clientSocket = serverSocket.accept();
+      //Sobald eine hergestellt wird, wird neues Client-Objekt erstellt
       lastClient = new ChatClient(clientSocket,output,userField.getText());
+      //Client wird Liste users hinzugefügt
       users.add(lastClient);
+      //neuer Thread erstellt, der Client startet
       Thread newThread = new Thread(lastClient);
       newThread.start();
       ControlsUtil.appendToMessageArea("[Server]", " new client connection recieved and client started",output);
+      //methode wird aufgerufen
+      //Methode ist nur zur Überprüfung für uns
       rueckgabeUser();
     }
   }
