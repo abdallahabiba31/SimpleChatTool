@@ -23,6 +23,7 @@ Somit wird ein Server erzeugt, der auf diesen Port läuft und auf Client-Verbidn
 3. Chatten:
 - Text im Feld "Text" einfügen 
 - Button "Send" klicken
+-
 Der eingegeben Text erscheint dann mit dem Namen des Users im Ausgabefenster.
 
 4. Client disconnecten
