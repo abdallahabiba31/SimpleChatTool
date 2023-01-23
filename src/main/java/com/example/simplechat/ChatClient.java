@@ -15,7 +15,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
+//implementieren von Runnable heisst, dass das Objekt über ein eigenen Thread ausgeführt wird
 public class ChatClient implements Runnable {
+  
+  //für den Client instanzieren wir ein neues Objekt über die portnummer (socket)
   private int port;
   private String userName;
   private TextArea output;
